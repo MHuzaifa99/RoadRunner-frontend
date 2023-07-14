@@ -20,7 +20,7 @@ function Card({ car }) {
 
   return (
     <>
-      <div className={`${styles.card} w-75`}>
+      <div className={`${styles.card} w-75`} data-testid={car.id}>
         <div className="card-body" style={{ display: "flex" }}>
           <img src={car.imageUrl} className="card-img-left" style={{ height: "auto", width: "250px" }} alt="carImage" />
           <div style={{ display: "flex", flexDirection: "column", margin: "20px" }}>

@@ -25,7 +25,7 @@ function Home() {
     <> 
     <div className={styles.container}>{loading ? cars.map((c)=> {
       return <Card car={c}/>
-    }): "loading"}
+    }): "Loading..."}
     </div>
     </>)
 }

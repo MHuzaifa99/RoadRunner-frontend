@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import styles from './BookingForm.module.css'
 import { useLocation, useNavigate } from 'react-router-dom';
+
 function BookingForm() {
 
     const navigate = useNavigate();
