@@ -7,11 +7,33 @@ import { render, waitFor, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 describe("Home Component", () => {
 
-    const server = setupServer(
-        rest.get(`${process.env.REACT_APP_CARS_API_URL}/cars/get`, (req, res, ctx) => {
-          return res(ctx.json(dummyCarData))
-        }),
-      )
+    const server = [{
+        "id": 1,
+        "name": "Damage Protection",
+        "sdecs": "Test",
+        "ldecs": "Test",
+        "price": 1500,
+        "imageUrl": "Image.url"
+    }, {
+        "id": 2,
+        "name": "Damage Protection",
+        "sdecs": "Test",
+        "ldecs": "Test",
+        "price": 1500,
+        "imageUrl": "Image.url"
+    },{
+        "id": 3,
+        "name": "Damage Protection",
+        "sdecs": "Test",
+        "ldecs": "Test",
+        "price": 1500,
+        "imageUrl": "Image.url"
+    }]
+    // setupServer(
+    //     rest.get(`${process.env.REACT_APP_CARS_API_URL}/cars/get`, (req, res, ctx) => {
+    //       return res(ctx.json(dummyCarData))
+    //     }),
+    //   )
     test("Test Cars", async() => {
         render(<MemoryRouter><Home/></MemoryRouter>)
         await waitFor(()=>{

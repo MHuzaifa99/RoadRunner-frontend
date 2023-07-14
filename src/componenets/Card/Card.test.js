@@ -8,8 +8,8 @@ import { createMemoryHistory } from 'history';
 
 const dummyData = {
     "name": "Damage Protection",
-    "sdecs": "dsafsdfsdfsd",
-    "ldecs": "sdafsdfsdafsdfas",
+    "sdecs": "Test",
+    "ldecs": "Test",
     "price": 1500,
     "imageUrl": "Image.url"
 }

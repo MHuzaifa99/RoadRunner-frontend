@@ -36,10 +36,8 @@ function BookingForm() {
         const rd = new Date(returnDate?.split('T')[0]);
         const diff = rd.getTime() - pd.getTime();
         const days = Math.round(diff / (24 * 60 * 60 * 1000));
-        console.log(days)
         const totalPrice = days * car.price
         setTotalPrice(totalPrice ? totalPrice : 0)
-        console.log(isInsured)
         setOrderPrice(totalPrice ? totalPrice : 0)
         if (isInsured) {
             setDamageProtection(days * 15000)
@@ -72,7 +70,6 @@ function BookingForm() {
         })
             .then(data => data.json())
             .then(data => {
-                console.log({ first: data })
                 if (isInsured) {
                     fetch(`${process.env.REACT_APP_FORM_API_URL}/rentalform/add`, {
                         method: 'POST',
@@ -90,7 +87,6 @@ function BookingForm() {
                             returnDate: returnDate
                         })
                     }).then(data => data.json())
-                        .then(data => console.log({ data }))
                 }
             })
             localStorage.clear()

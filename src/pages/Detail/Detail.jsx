@@ -9,7 +9,6 @@ function Detail() {
     const { state } = useLocation()
 
     const car = state.carData;
-    console.log(car)
     return (
         <div className={styles.container}>
             <div className="container">

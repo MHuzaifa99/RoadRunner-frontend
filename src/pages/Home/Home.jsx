@@ -8,14 +8,11 @@ function Home() {
   const [loading, setLoading] = useState(false)
   useEffect(()=>{
     setLoading(false);
-    console.log(process.env.REACT_APP_CARS_API_URL)
     fetch(`${process.env.REACT_APP_CARS_API_URL}/cars/get`)
     .then(data => data.json())
     .then(data =>{
       const arr = data.filter((d) => {
-        console.log(d.id !== 152)
         return d.id !== 152})
-        console.log({arr})
         setCars(arr)
         setLoading(true)
       })
@@ -23,8 +20,8 @@ function Home() {
 
   return (
     <> 
-    <div className={styles.container}>{loading ? cars.map((c)=> {
-      return <Card car={c}/>
+    <div  className={styles.container}>{loading ? cars.map((c)=> {
+      return <Card key={c.id} car={c}/>
     }): "Loading..."}
     </div>
     </>)
